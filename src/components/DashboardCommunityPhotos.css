@@ -1,0 +1,53 @@
+.dashboard-community-photos {
+  width: 100%;
+  min-width: 0;
+  margin: 28px 0 12px;
+  color: var(--text-primary, #182230);
+}
+.dashboard-community-heading { margin: 0 0 18px; }
+.dashboard-community-heading > span {
+  display: block; margin-bottom: 7px; color: #6c63d9;
+  font-size: 11px; font-weight: 800; letter-spacing: .13em;
+}
+.dashboard-community-heading h2 {
+  margin: 0 0 8px; font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.2; font-weight: 750;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.dashboard-community-heading p {
+  max-width: 720px; margin: 0; color: var(--text-secondary, #667085);
+  font-size: 14px; line-height: 1.65;
+}
+.dashboard-initiative-grid, .dashboard-values-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+}
+.dashboard-photo-card {
+  min-width: 0; overflow: hidden; border-radius: 16px;
+  border: 1px solid var(--border-color, #e7eaf0);
+  background: var(--card-bg, #fff);
+  box-shadow: 0 6px 20px rgba(18, 31, 53, .06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.dashboard-photo-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(18,31,53,.1); }
+.dashboard-photo-card > img { display: block; width: 100%; height: 190px; object-fit: cover; }
+.dashboard-photo-card-copy { padding: 15px 16px 17px; }
+.dashboard-photo-card-copy h3 { margin: 0 0 7px; font-size: 16px; line-height: 1.35; }
+.dashboard-photo-card-copy p { margin: 0; color: var(--text-secondary, #667085); font-size: 13px; line-height: 1.55; }
+.dashboard-values-heading { margin-top: 32px; }
+.dashboard-values-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.dashboard-photo-card.is-value > img { height: 145px; }
+.dashboard-photo-card.is-value .dashboard-photo-card-copy { padding: 13px; }
+.dashboard-photo-card.is-value h3 { font-size: 14px; }
+@media (max-width: 1100px) {
+  .dashboard-values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dashboard-photo-card > img { height: 170px; }
+}
+@media (max-width: 680px) {
+  .dashboard-initiative-grid, .dashboard-values-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .dashboard-photo-card > img, .dashboard-photo-card.is-value > img { height: 210px; }
+  .dashboard-community-photos { margin-top: 22px; }
+}

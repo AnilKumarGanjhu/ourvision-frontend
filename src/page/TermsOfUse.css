@@ -1,0 +1,16 @@
+
+@import "./PrivacyPolicy.css";
+
+/* Terms of Use page-specific styling */
+
+.terms-page .legal-header {
+  border-color: rgba(232, 189, 104, 0.3);
+}
+
+.terms-page .legal-section h2 {
+  color: #f0ca7a;
+}
+
+.terms-page .legal-section li::marker {
+  color: #e8bd68;
+}

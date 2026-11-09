@@ -1,0 +1,67 @@
+.home {
+  background: #090a0f;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Agar yahan koi background color hai (jaise purple), toh usko hata do. 
+     Background transparent rakho taaki stars dikhein. */
+  background: transparent; 
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10; /* 👈 Stars ke upar dikhne ke liye */
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  letter-spacing: 0.15em;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  background: linear-gradient(to bottom, #fff 0%, #7f8fa6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-content p {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8a99ad;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.about {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: #090a0f;
+}

@@ -1,0 +1,10 @@
+.pp-root { margin-top: 28px; color: #e8eaf6; }
+.pp-root h2 { font-size: 1.1rem; display: flex; align-items: center; gap: 8px; margin: 0 0 14px; }
+.pp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+.pp-item { position: relative; border-radius: 14px; overflow: hidden; background: #1f2333; border: 1px solid rgba(255,255,255,0.08); text-decoration: none; color: inherit; }
+.pp-item img { width: 100%; height: 150px; object-fit: cover; display: block; }
+.pp-caption { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; font-size: 0.82rem; }
+.pp-caption span { color: #9aa1bd; font-size: 0.74rem; }
+
+.pp-item { margin: 0; }
+.pp-item video { width: 100%; height: 150px; object-fit: cover; display: block; background: #000; }

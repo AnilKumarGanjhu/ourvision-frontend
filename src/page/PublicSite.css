@@ -1,0 +1,1007 @@
+
+/* =========================================
+   OUR VISION - PUBLIC SITE THEME
+   ========================================= */
+
+.public-site {
+  min-height: 100vh;
+  color: #f7f7ff;
+  background:
+    radial-gradient(
+      ellipse at 75% 12%,
+      rgba(94, 75, 194, 0.2),
+      transparent 36%
+    ),
+    #090a12;
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   HEADER & BRAND
+   ========================================= */
+
+.public-header {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 15px clamp(18px, 5vw, 76px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(10, 11, 20, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.public-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.public-brand img {
+  width: 43px;
+  height: 43px;
+  object-fit: contain;
+}
+
+.public-brand span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.public-brand strong {
+  font: 800 15px "Manrope", sans-serif;
+  letter-spacing: 1.4px;
+}
+
+.public-brand small {
+  color: #a5a5c1;
+  font-size: 11px;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.public-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.public-nav button {
+  position: relative;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #bcbcd2;
+  border-radius: 9px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.public-nav button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.public-nav button.active {
+  color: #fff;
+  background: rgba(120, 102, 237, 0.16);
+  border-color: rgba(169, 156, 255, 0.2);
+}
+
+.public-nav button:focus-visible,
+.public-brand:focus-visible,
+.public-login-btn:focus-visible,
+.public-primary-btn:focus-visible,
+.public-secondary-btn:focus-visible {
+  outline: 2px solid #a99cff;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.public-login-btn,
+.public-primary-btn,
+.public-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 10px;
+  padding: 11px 17px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.public-login-btn,
+.public-primary-btn {
+  border: 1px solid #7968ef;
+  background: linear-gradient(135deg, #7866ed, #5c4bc8);
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(91, 75, 200, 0.22);
+}
+
+.public-secondary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f4ff;
+}
+
+.public-login-btn:hover,
+.public-primary-btn:hover,
+.public-secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.public-login-btn:hover,
+.public-primary-btn:hover {
+  box-shadow: 0 12px 28px rgba(91, 75, 200, 0.32);
+}
+
+.public-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.public-main {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HOME HERO
+   ========================================= */
+
+.public-hero {
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 42px;
+  padding: 70px 0 56px;
+}
+
+.public-hero-copy {
+  max-width: 650px;
+}
+
+.public-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #b8adff;
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  font-weight: 800;
+}
+
+.public-hero h1 {
+  margin: 22px 0 18px;
+  font: 800 clamp(42px, 6vw, 72px) / 1.08 "Manrope", sans-serif;
+  letter-spacing: -2.5px;
+}
+
+.public-hero h1 em {
+  font-style: normal;
+  color: #a99cff;
+}
+
+.public-hero-copy > p {
+  color: #b7b8cc;
+  max-width: 580px;
+  font-size: 16px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.public-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* =========================================
+   HERO ART
+   ========================================= */
+
+.public-hero-art {
+  min-height: 390px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.public-orbit {
+  position: absolute;
+  border: 1px solid rgba(161, 148, 255, 0.22);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+.public-orbit-one {
+  width: min(35vw, 390px);
+  height: min(35vw, 390px);
+}
+
+.public-orbit-two {
+  width: min(27vw, 300px);
+  height: min(38vw, 420px);
+  transform: rotate(35deg);
+  border-color: rgba(110, 210, 191, 0.17);
+}
+
+.public-hero-emblem {
+  width: 190px;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  border-radius: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.035)
+  );
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+  transform: rotate(-5deg);
+}
+
+.public-hero-emblem img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+}
+
+.public-floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(24, 25, 43, 0.92);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.public-floating-card > svg {
+  color: #b6aaff;
+  flex-shrink: 0;
+}
+
+.public-floating-card span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.public-floating-card b {
+  font-size: 12px;
+}
+
+.public-floating-card small {
+  color: #a6a7bf;
+  font-size: 10px;
+}
+
+.public-floating-top {
+  top: 55px;
+  right: 0;
+}
+
+.public-floating-bottom {
+  bottom: 45px;
+  left: 0;
+}
+
+/* =========================================
+   HOME VALUES SECTION
+   ========================================= */
+
+.public-values-section {
+  padding: 40px 0 64px;
+}
+
+.public-section-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 30px;
+}
+
+.public-section-heading > span {
+  color: #b7aaff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.public-section-heading h2 {
+  font: 800 clamp(25px, 3vw, 36px) "Manrope", sans-serif;
+  margin: 12px 0;
+}
+
+.public-section-heading p {
+  color: #aeb0c7;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.public-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.public-value-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 17px;
+  padding: 25px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.065),
+    rgba(255, 255, 255, 0.025)
+  );
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.public-value-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(169, 156, 255, 0.3);
+  background: linear-gradient(
+    145deg,
+    rgba(125, 105, 237, 0.1),
+    rgba(255, 255, 255, 0.025)
+  );
+}
+
+.public-value-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  color: #c0b7ff;
+  background: rgba(125, 105, 237, 0.16);
+}
+
+.public-value-card h3 {
+  margin: 20px 0 8px;
+  font: 700 17px "Manrope", sans-serif;
+}
+
+.public-value-card p {
+  color: #aeb0c7;
+  line-height: 1.7;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* =========================================
+   BUSINESS IDEA / GALLERY EXPLORE SECTION
+   Add these classes to the PublicSite.jsx
+   explore cards if they are present.
+   ========================================= */
+
+.public-explore-section {
+  padding: 38px 0 65px;
+}
+
+.public-explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.public-explore-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 235px;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(120, 102, 237, 0.15),
+      transparent 48%
+    ),
+    linear-gradient(145deg, #151626, #10111d);
+  color: #f7f7ff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.public-explore-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(169, 156, 255, 0.42);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.public-explore-card:focus-visible {
+  outline: 2px solid #a99cff;
+  outline-offset: 3px;
+}
+
+.public-explore-icon {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(169, 156, 255, 0.18);
+  border-radius: 15px;
+  background: rgba(125, 105, 237, 0.14);
+  color: #c0b7ff;
+}
+
+.public-explore-card h3 {
+  margin: 0 0 10px;
+  font: 800 20px "Manrope", sans-serif;
+}
+
+.public-explore-card p {
+  max-width: 480px;
+  margin: 0 0 22px;
+  color: #aeb0c7;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.public-explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: #b8adff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* =========================================
+   JOIN STRIP
+   ========================================= */
+
+.public-join-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 28px;
+  margin: 0 0 60px;
+  border: 1px solid rgba(169, 156, 255, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(
+    100deg,
+    rgba(103, 84, 217, 0.17),
+    rgba(255, 255, 255, 0.035)
+  );
+}
+
+.public-join-strip h2 {
+  font: 700 20px "Manrope", sans-serif;
+  margin: 0 0 6px;
+}
+
+.public-join-strip p {
+  color: #b1b2c8;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================
+   INNER PUBLIC PAGES
+   About Us, Business Idea, Gallery & Events
+   ========================================= */
+
+.public-inner-page {
+  min-height: 65vh;
+  padding: 35px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Avoid horizontal overflow in embedded pages */
+.public-inner-page > * {
+  max-width: 100%;
+}
+
+/* Contact page */
+.public-contact-page {
+  min-height: 65vh;
+  padding: 50px 0;
+  color: #20253a;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   OPTIONAL PUBLIC PAGE SECTION STYLES
+   Use these classes inside BusinessIdea.jsx
+   and GalleryEvents.jsx when applicable.
+   ========================================= */
+
+.public-page-heading {
+  max-width: 780px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.public-page-heading .eyebrow {
+  display: inline-block;
+  color: #b8adff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.public-page-heading h1 {
+  margin: 14px 0;
+  color: #f7f7ff;
+  font: 800 clamp(30px, 4vw, 46px) / 1.15 "Manrope", sans-serif;
+  letter-spacing: -1px;
+}
+
+.public-page-heading p {
+  margin: 0;
+  color: #aeb0c7;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* General dark-themed content card */
+.public-content-card {
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 17px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.065),
+    rgba(255, 255, 255, 0.025)
+  );
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.public-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 23px clamp(18px, 5vw, 76px);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  color: #9698b2;
+  font-size: 12px;
+}
+
+.public-footer button {
+  border: 0;
+  background: transparent;
+  color: #c4bcff;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.public-footer button:hover {
+  color: #fff;
+}
+
+/* =========================================
+   AUTH / REGISTRATION HELPERS
+   ========================================= */
+
+.login-back-btn {
+  align-self: flex-start;
+  padding: 0;
+  margin: 0 0 18px;
+  border: 0;
+  background: transparent;
+  color: #7d70e8;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.registration-prompt {
+  margin-top: 17px;
+  text-align: center;
+  color: #8589a0;
+  font-size: 12px;
+}
+
+.registration-prompt button {
+  border: 0;
+  background: transparent;
+  color: #6554d9;
+  padding: 3px 4px;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.registration-notice {
+  margin-top: 12px;
+  border: 1px solid #e6d9a8;
+  background: #fff8df;
+  color: #6e5314;
+  padding: 11px 12px;
+  border-radius: 9px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.auth-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #e6e8f1;
+  border-radius: 9px;
+  background: #fff;
+  color: #4e4a79;
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================================
+   RESPONSIVE: TABLET
+   ========================================= */
+
+@media (max-width: 1100px) {
+  .public-header {
+    gap: 15px;
+  }
+
+  .public-nav {
+    gap: 2px;
+  }
+
+  .public-nav button {
+    padding: 9px 8px;
+    font-size: 12px;
+  }
+
+  .public-hero {
+    gap: 25px;
+  }
+
+  .public-hero h1 {
+    font-size: clamp(40px, 5vw, 60px);
+  }
+}
+
+/* =========================================
+   RESPONSIVE: MOBILE / SMALL TABLET
+   ========================================= */
+
+@media (max-width: 800px) {
+  .public-header {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+
+  .public-brand {
+    margin-right: auto;
+  }
+
+  .public-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 3px 0 5px;
+    scrollbar-width: thin;
+  }
+
+  .public-nav button {
+    flex-shrink: 0;
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .public-hero {
+    grid-template-columns: 1fr;
+    padding-top: 48px;
+    gap: 15px;
+  }
+
+  .public-hero-copy {
+    max-width: 100%;
+  }
+
+  .public-hero-art {
+    min-height: 300px;
+  }
+
+  .public-orbit-one {
+    width: 270px;
+    height: 270px;
+  }
+
+  .public-orbit-two {
+    width: 220px;
+    height: 300px;
+  }
+
+  .public-floating-top {
+    right: 2%;
+    top: 15px;
+  }
+
+  .public-floating-bottom {
+    left: 2%;
+    bottom: 10px;
+  }
+
+  .public-value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .public-explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .public-join-strip {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .public-inner-page {
+    padding: 25px 0;
+  }
+
+  .public-contact-page {
+    padding: 30px 0;
+  }
+}
+
+/* =========================================
+   RESPONSIVE: SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+  .public-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .public-brand img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .public-brand strong {
+    font-size: 13px;
+  }
+
+  .public-brand small {
+    font-size: 10px;
+  }
+
+  .public-login-btn {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .public-hero {
+    padding-top: 38px;
+  }
+
+  .public-hero h1 {
+    font-size: clamp(37px, 10vw, 48px);
+    letter-spacing: -1.5px;
+  }
+
+  .public-hero-copy > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .public-hero-art {
+    min-height: 260px;
+  }
+
+  .public-hero-emblem {
+    width: 145px;
+    height: 145px;
+    border-radius: 30px;
+  }
+
+  .public-hero-emblem img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .public-floating-card {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .public-floating-card b {
+    font-size: 11px;
+  }
+
+  .public-floating-card small {
+    font-size: 9px;
+  }
+
+  .public-values-section {
+    padding: 28px 0 45px;
+  }
+
+  .public-value-card {
+    padding: 21px;
+  }
+
+  .public-explore-card {
+    min-height: 210px;
+    padding: 22px;
+  }
+
+  .public-join-strip {
+    padding: 22px;
+    margin-bottom: 40px;
+  }
+
+  .public-join-strip h2 {
+    font-size: 18px;
+  }
+
+  .public-footer {
+    flex-wrap: wrap;
+    padding: 20px 16px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .public-site *,
+  .public-site *::before,
+  .public-site *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================
+   OUR VISION PHOTO HIGHLIGHTS + VALUES
+   ========================================= */
+.public-photo-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 4px 0 48px;
+}
+.public-photo-highlight {
+  position: relative;
+  min-width: 0;
+  height: 245px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  background: #151626;
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
+.public-photo-highlight img {
+  display: block;
+  width: 100%;
+  height: 116%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+.public-photo-highlight:hover img { transform: scale(1.045); }
+.public-photo-highlight::after {
+  content: "";
+  position: absolute;
+  inset: 30% 0 0;
+  background: linear-gradient(transparent, rgba(8,10,18,.88));
+  pointer-events: none;
+}
+.public-photo-caption {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+}
+.public-photo-caption span { color: #fff; font-size: 17px; font-weight: 800; }
+.public-photo-caption p { color: rgba(255,255,255,.86); font-size: 12px; line-height: 1.5; margin: 5px 0 0; }
+.public-beliefs-section { padding: 24px 0 64px; }
+.public-beliefs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.public-belief-card {
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.025));
+  transition: transform .2s ease, border-color .2s ease;
+}
+.public-belief-card:hover { transform: translateY(-4px); border-color: rgba(169,156,255,.35); }
+.public-belief-card img { display: block; width: 100%; height: 305px; object-fit: cover; }
+.public-belief-card > div { padding: 17px; }
+.public-belief-card h3 { margin: 0 0 8px; font: 700 15px "Manrope", sans-serif; }
+.public-belief-card p { margin: 0; color: #aeb0c7; font-size: 12px; line-height: 1.7; }
+@media (max-width: 1000px) {
+  .public-beliefs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .public-photo-highlight { height: 220px; }
+}
+@media (max-width: 650px) {
+  .public-photo-highlights { grid-template-columns: 1fr; gap: 14px; padding-bottom: 32px; }
+  .public-photo-highlight { height: 230px; }
+  .public-beliefs-grid { grid-template-columns: 1fr; }
+  .public-belief-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: stretch; }
+  .public-belief-card img { height: 100%; min-height: 140px; }
+  .public-belief-card > div { padding: 14px; }
+}

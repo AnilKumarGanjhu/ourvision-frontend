@@ -1,0 +1,301 @@
+/* =========================================================
+   ImageSlider.css — Compact professional 3D carousel
+   ========================================================= */
+
+.carousel-3d {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* ---------- Slides ---------- */
+.carousel-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 220px;
+  margin-top: -110px;
+  margin-left: -80px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateX(0) scale(0.8);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0) scale(1.1);
+  z-index: 5;
+}
+
+.carousel-slide.next {
+  opacity: 0.55;
+  filter: blur(0.5px);
+  transform: translateX(110px) scale(0.82) rotateY(-12deg);
+  z-index: 3;
+}
+
+.carousel-slide.prev {
+  opacity: 0.55;
+  filter: blur(0.5px);
+  transform: translateX(-110px) scale(0.82) rotateY(12deg);
+  z-index: 3;
+}
+
+.carousel-slide.next-next,
+.carousel-slide.prev-prev {
+  opacity: 0;
+  transform: translateX(200px) scale(0.65) rotateY(-20deg);
+  z-index: 1;
+}
+
+/* ---------- Arrows ---------- */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: #3b3b98;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  padding-bottom: 3px;
+  z-index: 15;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  opacity: 0.85;
+}
+
+.nav-arrow:hover {
+  opacity: 1;
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow-left { left: 12px; }
+.nav-arrow-right { right: 12px; }
+
+/* ---------- Pause ---------- */
+.pause-slider-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: #3b3b98;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.pause-slider-btn:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+/* ---------- Bottom bar ---------- */
+.carousel-bottom {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.carousel-bottom > * { pointer-events: auto; }
+
+.slide-name-btn {
+  padding: 7px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #3b3b98;
+  border: none;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.slide-name-btn:hover {
+  background: #ffffff;
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.slide-name-btn span {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.dot.active {
+  width: 18px;
+  border-radius: 3px;
+  background: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVE CAROUSEL SIZING
+   ========================================= */
+
+.carousel-3d {
+  min-width: 0;
+  isolation: isolate;
+}
+
+@media (max-width: 700px) {
+  .carousel-3d {
+    height: clamp(230px, 58vw, 270px);
+    border-radius: 16px;
+  }
+
+  .carousel-slide {
+    width: 140px;
+    height: 190px;
+    margin-top: -95px;
+    margin-left: -70px;
+  }
+
+  .carousel-slide.next {
+    transform: translateX(86px) scale(.78) rotateY(-10deg);
+  }
+
+  .carousel-slide.prev {
+    transform: translateX(-86px) scale(.78) rotateY(10deg);
+  }
+
+  .carousel-slide.next-next,
+  .carousel-slide.prev-prev {
+    transform: translateX(150px) scale(.6) rotateY(-16deg);
+  }
+
+  .nav-arrow-left {
+    left: 7px;
+  }
+
+  .nav-arrow-right {
+    right: 7px;
+  }
+
+  .nav-arrow {
+    width: 31px;
+    height: 31px;
+  }
+
+  .slide-name-btn {
+    max-width: calc(100vw - 100px);
+    padding: 7px 12px;
+    font-size: 11px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .carousel-3d {
+    height: 225px;
+  }
+
+  .carousel-slide {
+    width: 122px;
+    height: 170px;
+    margin-top: -85px;
+    margin-left: -61px;
+  }
+
+  .carousel-slide.next {
+    transform: translateX(70px) scale(.72) rotateY(-8deg);
+  }
+
+  .carousel-slide.prev {
+    transform: translateX(-70px) scale(.72) rotateY(8deg);
+  }
+
+  .nav-arrow {
+    width: 28px;
+    height: 28px;
+  }
+
+  .carousel-bottom {
+    bottom: 7px;
+    gap: 6px;
+  }
+}
+
+.carousel-slide .carousel-initials {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+  font-size: 72px;
+  font-weight: 700;
+  border-radius: inherit;
+}

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400');
+
+.social-bar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Aligns social bar to the left of the box */
+  align-items: center;
+  padding: 20px 0 40px 0; /* Adds space below the form */
+}
+
+.social-bar-wrapper ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.social-bar-wrapper ul li {
+  list-style: none;
+}
+
+.social-bar-wrapper ul li a .fa {
+  font-size: 24px;
+  color: #262626;
+  line-height: 50px;
+  transition: .5s;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.social-bar-wrapper ul li a span {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 15px;
+  color: #262626;
+  letter-spacing: 2px;
+  transition: .5s;
+  left: 45px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.social-bar-wrapper ul li a {
+  text-decoration: none;
+  display: block;
+  width: 140px;
+  height: 50px;
+  background: #fff;
+  text-align: left;
+  padding-left: 10px;
+  transform: rotate(-10deg) skew(10deg) translate(0,0); 
+  transition: .5s;
+  box-shadow: -8px 8px 5px rgba(0,0,0,.2);
+  position: relative;
+}
+
+.social-bar-wrapper ul li a:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  height: 100%;
+  width: 10px;
+  background: #d1d1d1;
+  transition: .5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+
+.social-bar-wrapper ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -5px;
+  height: 10px;
+  width: 100%;
+  background: #d1d1d1;
+  transition: .5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+.social-bar-wrapper ul li a:hover {
+  transform: rotate(-10deg) skew(10deg) translate(8px, -5px);
+  box-shadow: -15px 15px 15px rgba(0,0,0,.2);
+}
+
+.social-bar-wrapper ul li:hover .fa,
+.social-bar-wrapper ul li:hover span {
+  color: #fff;
+}
+
+/* Platform Colors on Hover */
+.social-bar-wrapper ul li:hover:nth-child(1) a { background: #3b5998; }
+.social-bar-wrapper ul li:hover:nth-child(1) a:before { background: #365492; }
+.social-bar-wrapper ul li:hover:nth-child(1) a:after { background: #4a69ad; }
+
+.social-bar-wrapper ul li:hover:nth-child(2) a { background: #00aced; }
+.social-bar-wrapper ul li:hover:nth-child(2) a:before { background: #097aa5; }
+.social-bar-wrapper ul li:hover:nth-child(2) a:after { background: #53b9e0; }
+
+.social-bar-wrapper ul li:hover:nth-child(3) a { background: #ff0000; }
+.social-bar-wrapper ul li:hover:nth-child(3) a:before { background: #cc0000; }
+.social-bar-wrapper ul li:hover:nth-child(3) a:after { background: #ff3333; }
+
+.social-bar-wrapper ul li:hover:nth-child(4) a { background: #e4405f; }
+.social-bar-wrapper ul li:hover:nth-child(4) a:before { background: #d81c3f; }
+.social-bar-wrapper ul li:hover:nth-child(4) a:after { background: #e46880; }

@@ -1,0 +1,367 @@
+/* ==========================================
+   FOOTER STYLES — CTA + Main Footer (Final)
+   ========================================== */
+
+/* ==========================================
+   0. WRAPPER (Hide Issue Fix)
+   ========================================== */
+.footer-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 20; /* Sidebar ke upar dikhne ke liye */
+  flex-shrink: 0; /* Flexbox me squeeze hone se rokta hai */
+  margin-top: auto; /* Page ke bottom me push karta hai */
+  background: #10241c;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   1. CTA SECTION (Footer ke upar)
+   ========================================== */
+.footer-cta {
+  background: #090a0f;
+  color: #fff;
+  padding: 9px 1%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.footer-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-cta h3 {
+  font-size: 2rem;
+  margin: 0 0 16px;
+  color: #f5b301; /* Golden */
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.footer-cta p {
+  font-size: 1.1rem;
+  color: #d7e5df;
+  margin: 0 0 30px;
+  line-height: 1.6;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.footer-cta .donate-btn {
+  background: #f5b301;
+  color: #10241c;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.footer-cta .donate-btn:hover {
+  background: #ffcc33;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(245, 179, 1, 0.4);
+}
+
+/* ==========================================
+   2. MAIN FOOTER
+   ========================================== */
+.ov-footer {
+  background: #10241c;
+  color: #fff;
+  padding: 60px 5% 30px;
+  margin-top: auto;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.ov-footer a {
+  color: #d7e5df;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.ov-footer a:hover {
+  color: #f5b301;
+}
+
+/* ---------- Top Grid (Links, Contact, Social) ---------- */
+.ov-footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.ov-footer h4 {
+  color: #fff;
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Quick Links */
+.ov-footer-links ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ov-footer-links ul a:hover {
+  padding-left: 5px;
+}
+
+/* Contact */
+.ov-footer-contact p {
+  color: #d7e5df;
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Social Icons */
+.ov-footer-social .social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.ov-footer-social .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.ov-footer-social .social-icons a:hover {
+  background: #f5b301;
+  padding-left: 0;
+}
+
+.ov-footer-social .social-icons a:hover svg {
+  fill: #10241c;
+}
+
+.ov-footer-social .social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: #d7e5df;
+  transition: fill 0.3s ease;
+}
+
+/* ---------- Newsletter ---------- */
+.ov-footer-newsletter {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.ov-footer-newsletter p {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  flex: 1;
+  min-width: 250px;
+  margin: 0;
+}
+
+.ov-footer-newsletter-form {
+  display: flex;
+  gap: 10px;
+  flex: 2;
+  min-width: 300px;
+}
+
+.ov-footer-newsletter-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1px solid #2a4a3d;
+  background: #1a332a;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.ov-footer-newsletter-form input:focus {
+  border-color: #f5b301;
+}
+
+.ov-footer-newsletter-form input::placeholder {
+  color: #8fa89e;
+}
+
+.ov-footer-newsletter-form button {
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  background: #f5b301;
+  color: #10241c;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ov-footer-newsletter-form button:hover {
+  background: #ffcc33;
+  transform: translateY(-2px);
+}
+
+/* ---------- Bottom Bar (Copyright) ---------- */
+.ov-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #8fa89e;
+  box-sizing: border-box;
+}
+
+.ov-footer-bottom p {
+  margin: 0;
+}
+
+.ov-footer-bottom a {
+  color: #8fa89e;
+}
+
+.ov-footer-bottom a:hover {
+  color: #f5b301;
+}
+
+/* ==========================================
+   3. MOBILE RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+  .footer-cta h3 {
+    font-size: 1.6rem;
+  }
+  
+  .footer-cta p {
+    font-size: 1rem;
+  }
+
+  .ov-footer-newsletter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ov-footer-newsletter-form {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .ov-footer-newsletter-form button {
+    width: 100%;
+  }
+
+  .ov-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ==========================================
+   4. FOOTER LOGIN BUTTON (New)
+   ========================================== */
+.ov-footer-bottom-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-login-btn {
+  background: transparent;
+  color: #f5b301;
+  border: 1px solid #f5b301;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-login-btn:hover {
+  background: #f5b301;
+  color: #10241c;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .ov-footer-bottom-info {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Footer width and content safety when dashboard/sidebar width changes */
+.footer-wrapper,
+.footer-cta,
+.ov-footer {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ov-footer-top > *,
+.ov-footer-newsletter > *,
+.ov-footer-newsletter-form {
+  min-width: 0;
+}
+
+.ov-footer-newsletter-form input {
+  min-width: 0;
+}
+
+@media (max-width: 950px) {
+  .ov-footer {
+    padding-left: clamp(16px, 4vw, 32px);
+    padding-right: clamp(16px, 4vw, 32px);
+  }
+}
+
+@media (max-width: 480px) {
+  .ov-footer-newsletter p,
+  .ov-footer-newsletter-form {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .ov-footer-newsletter {
+    padding: 18px;
+    gap: 14px;
+  }
+}

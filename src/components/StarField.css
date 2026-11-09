@@ -1,0 +1,17 @@
+.star-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: hata do */
+  z-index: 1; /* 👈 Ise 1 karo */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
