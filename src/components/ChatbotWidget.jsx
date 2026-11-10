@@ -3,10 +3,10 @@ import React, { useEffect, useRef, useState } from "react";
 import ChatMarkdown from "./ChatMarkdown";
 import "../style/ChatbotWidget.css";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "https://ourvision-backend.onrender.com").replace(/\/$/, "");
 
 // Backend may call Gemini (fallback), so allow more time than a database lookup.
-const REQUEST_TIMEOUT_MS = 40000;
+const REQUEST_TIMEOUT_MS = 90000;
 
 // Number of earlier messages sent to the backend so Gemini can handle follow-ups.
 const HISTORY_LIMIT = 6;
@@ -227,9 +227,14 @@ export default function ChatbotWidget() {
         data = null;
       }
 
-      // The backend returns a user-friendly `answer` even for limits and errors.
+      // Do not treat HTTP error responses as successful chatbot answers.
+      if (!response.ok) {
+        const serverMessage = data?.answer || `Backend returned HTTP ${response.status}`;
+        throw new Error(`HTTP ${response.status}: ${serverMessage}`);
+      }
+
       if (!data || !data.answer) {
-        throw new Error("Request failed");
+        throw new Error(`Invalid chatbot response (HTTP ${response.status})`);
       }
 
       setMessages((prev) => [
@@ -243,6 +248,11 @@ export default function ChatbotWidget() {
       ]);
     } catch (error) {
       const timedOut = error?.name === "AbortError";
+      console.error("[Our Vision Chatbot] Request failed:", {
+        apiUrl: `${API_BASE}/api/chatbot/message`,
+        name: error?.name,
+        message: error?.message
+      });
 
       setMessages((prev) => [
         ...prev,
@@ -251,8 +261,10 @@ export default function ChatbotWidget() {
           role: "bot",
           isError: true,
           text: timedOut
-            ? "Jawab aane mein zyada time lag raha hai. Kripya dobara try karein."
-            : "Chatbot server se connect nahi ho pa raha. Backend check karke dobara try karein."
+            ? "Server ko jawab dene mein 90 seconds se zyada lag rahe hain. Kripya Backend Render Logs check karein."
+            : error?.message?.startsWith("HTTP")
+              ? `Backend response: ${error.message}`
+              : "Chatbot server se connect nahi ho pa raha. F12 → Console aur Network mein /api/chatbot/message ka error check karein."
         }
       ]);
     } finally {
