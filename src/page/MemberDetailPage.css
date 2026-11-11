@@ -16,6 +16,7 @@
   font-size: 13px;
   cursor: pointer;
   margin-bottom: 20px;
+  color: #2563eb;
 }
 .member-detail-back:hover { border-color: #6c5ce7; }
 
