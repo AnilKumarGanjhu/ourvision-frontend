@@ -1241,48 +1241,6 @@ function App() {
                     <Bell size={18} />
                     <i />
                   </button>
-                  <div className="profile-menu-wrap">
-                    <button
-                      type="button"
-                      className="profile-trigger top-user"
-                      onClick={() => setProfileOpen((open) => !open)}
-                    >
-                      <span className="avatar small">
-                        {initials(user.name)}
-                      </span>
-                      <ChevronDown size={15} />
-                    </button>
-                    {profileOpen && (
-                      <div className="profile-dropdown">
-                        <div className="profile-dropdown-user">
-                          <b>{user.name}</b>
-                          <small>
-                            {user.role
-                              ?.replace("ROLE_", "")
-                              .replaceAll("_", " ")}
-                          </small>
-                        </div>
-                        <button
-                          className="profile-menu-item"
-                          onClick={() => {
-                            setProfileOpen(false);
-                            setSection("Settings");
-                          }}
-                        >
-                          <Settings size={16} /> Settings
-                        </button>
-                        <button
-                          className="profile-logout"
-                          onClick={() => {
-                            setProfileOpen(false);
-                            logout();
-                          }}
-                        >
-                          <LogOut size={16} /> Logout
-                        </button>
-                      </div>
-                    )}
-                  </div>
                   <button
                     type="button"
                     className="auth-action-btn"
