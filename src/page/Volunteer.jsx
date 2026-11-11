@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "./Volunteer.css";
 
@@ -29,19 +28,24 @@ export default function Volunteer() {
   return (
     <main className="volunteer-page">
       <section className="volunteer-hero">
-        <div className="volunteer-hero-content">
-          <span className="volunteer-tag">JOIN OUR COMMUNITY</span>
-          <h1>Be the Reason Someone Smiles</h1>
-          <p>
-            Your time, skills, and kindness can make a real difference.
-            Join Our Vision and help us build a stronger, more supportive
-            community.
-          </p>
-          <a href="#volunteer-form" className="volunteer-primary-btn">
-            Become a Volunteer
-          </a>
-        </div>
-      </section>
+  <div className="volunteer-hero-inner">
+    <a href="/" className="legal-back-link">
+      ← Back to Home
+    </a>
+
+    <div className="volunteer-hero-content">
+      <span className="volunteer-tag">JOIN OUR COMMUNITY</span>
+      <h1>Be the Reason Someone Smiles</h1>
+      <p>
+        Your time, skills, and kindness can make a real difference. Join Our
+        Vision and help us build a stronger, more supportive community.
+      </p>
+      <a href="#volunteer-form" className="volunteer-primary-btn">
+        Become a Volunteer
+      </a>
+    </div>
+  </div>
+</section>
 
       <section className="volunteer-intro">
         <h2>Make a Difference with Our Vision</h2>
