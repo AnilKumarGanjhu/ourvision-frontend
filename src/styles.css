@@ -4,6 +4,7 @@
    ROOT VARIABLES
    ========================================= */
 :root {
+  color-scheme: dark;
   font-family: 'DM Sans', sans-serif;
   color: #20253a;
   background: #f5f7fb;
@@ -26,6 +27,14 @@
   --font-size-base: 14px;
   --font-weight-base: 400;
   --font-style-base: normal;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
