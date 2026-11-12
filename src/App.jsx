@@ -433,6 +433,26 @@ function Login({ onLogin, onBack, onRegister }) {
 function App() {
   const { showToast } = useToast();
 
+  // ✅ NEW: First-paint theme apply — public/login page pe bhi dark rahe
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(
+        localStorage.getItem("ourvision_appearance") || "{}",
+      );
+      const theme = saved.theme || "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      document.body.classList.toggle("dark-mode", theme === "dark");
+    } catch {
+      // fallback: dark
+      document.documentElement.setAttribute("data-theme", "dark");
+      document.documentElement.dataset.theme = "dark";
+      document.documentElement.style.colorScheme = "dark";
+      document.body.classList.add("dark-mode");
+    }
+  }, []);
+
   const [user, setUser] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("ourvision_user") || "null");
@@ -564,9 +584,10 @@ function App() {
     onConfirm: null,
   });
 
+  // ✅ DEFAULT DARK MODE — saved preference wins, warna "dark"
   const [appearance, setAppearance] = useState(() => {
     const defaults = {
-      theme: "light",
+      theme: "dark",
       wallpaper: "none",
       customWallpaper: "",
       uploadedWallpaper: "",
@@ -577,9 +598,13 @@ function App() {
       fontStyle: "normal",
     };
     try {
+      const saved = JSON.parse(
+        localStorage.getItem("ourvision_appearance") || "{}",
+      );
       return {
         ...defaults,
-        ...JSON.parse(localStorage.getItem("ourvision_appearance") || "{}"),
+        ...saved,
+        theme: saved.theme || "dark",
       };
     } catch {
       return defaults;
@@ -589,7 +614,12 @@ function App() {
   useLayoutEffect(() => {
     localStorage.setItem("ourvision_appearance", JSON.stringify(appearance));
 
+    // ✅ Theme attribute + color-scheme + body class
+    document.documentElement.setAttribute("data-theme", appearance.theme);
     document.documentElement.dataset.theme = appearance.theme;
+    document.documentElement.style.colorScheme = appearance.theme;
+    document.body.classList.toggle("dark-mode", appearance.theme === "dark");
+
     document.documentElement.style.setProperty("--purple", appearance.accent);
     document.documentElement.style.setProperty(
       "--font-size-base",
@@ -1241,6 +1271,48 @@ function App() {
                     <Bell size={18} />
                     <i />
                   </button>
+                  <div className="profile-menu-wrap">
+                    <button
+                      type="button"
+                      className="profile-trigger top-user"
+                      onClick={() => setProfileOpen((open) => !open)}
+                    >
+                      <span className="avatar small">
+                        {initials(user.name)}
+                      </span>
+                      <ChevronDown size={15} />
+                    </button>
+                    {profileOpen && (
+                      <div className="profile-dropdown">
+                        <div className="profile-dropdown-user">
+                          <b>{user.name}</b>
+                          <small>
+                            {user.role
+                              ?.replace("ROLE_", "")
+                              .replaceAll("_", " ")}
+                          </small>
+                        </div>
+                        <button
+                          className="profile-menu-item"
+                          onClick={() => {
+                            setProfileOpen(false);
+                            setSection("Settings");
+                          }}
+                        >
+                          <Settings size={16} /> Settings
+                        </button>
+                        <button
+                          className="profile-logout"
+                          onClick={() => {
+                            setProfileOpen(false);
+                            logout();
+                          }}
+                        >
+                          <LogOut size={16} /> Logout
+                        </button>
+                      </div>
+                    )}
+                  </div>
                   <button
                     type="button"
                     className="auth-action-btn"
